@@ -9,18 +9,18 @@ import * as echarts from 'echarts'
 
 
 const props = defineProps({
-  data: {
+  Woter: {
     type: Array,
     default: () => [
-      { time: '00:00', usage: 0.2 },
-      { time: '02:00', usage: 0.1 },
-      {time: '04:00', usage: 1.5 },
+      { time: '08:00', usage: 0.2 },
+      { time: '12:00', usage: 0.1 },
+      {time: '18:00', usage: 100 },
       // ...其他数据
     ]
   },
   threshold: {
     type: Number,
-    default: 1.5 // 用水量警戒线
+    default: 30 // 用水量警戒线
   }
 })
 
@@ -55,9 +55,9 @@ const initChart = () => {
     },
     xAxis: {
       type: 'category',
-      data: props.data.map(item => item.time),
+      data: props.Woter.map(item => item.time),
       axisLabel: {
-        interval: Math.floor(props.data.length / 6) // 智能间隔显示
+        interval:0 // 智能间隔显示
       }
     },
     yAxis: {
@@ -71,7 +71,7 @@ const initChart = () => {
         name: '用水量',
         type: 'line',
         smooth: true,
-        data: props.data.map(item => item.usage),
+        data: props.Woter.map(item => item.usage),
         symbol: 'circle',
         symbolSize: 8,
         itemStyle: {

@@ -16,7 +16,14 @@ import { LineChart } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import { onMounted, ref, onBeforeUnmount } from 'vue';
+import { defineProps } from 'vue';
 
+const props = defineProps({
+  Arr:{
+    type: Array,
+    default: () => []
+  }
+});
 // 按需注册组件
 echarts.use([
   TitleComponent,
@@ -41,7 +48,7 @@ const initChart = () => {
 
   const option = {
     title: {
-      text: '校园大楼当日用电情况',
+      text: '当日用电情况',
       subtext: '瓦'
     },
     tooltip: {
@@ -104,7 +111,7 @@ const initChart = () => {
         name: 'Electricity',
         type: 'line',
         smooth: true,
-        data: [300, 280, 250, 260, 270, 300, 550, 500, 400, 390, 380, 390, 400, 500, 600, 750, 800, 700, 600, 400],
+        data:props.Arr,
         markArea: {
           itemStyle: {
             color: 'rgba(255, 173, 177, 0.4)'

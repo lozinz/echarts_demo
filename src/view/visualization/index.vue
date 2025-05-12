@@ -21,20 +21,20 @@ onBeforeMount( async  () => {
 
 <template>
   <el-tabs v-if="isDataLoaded"  v-model="activeName" class="demo-tabs" @tab-click="handleClick">
-    <el-tab-pane label="校园大楼总用水用电" name="first" class="flex justify-around items-center flex-wrap">
+    <el-tab-pane label="校园大楼总用水用电" name="first" class="flex justify-around items-center flex-wrap" :style="{ width:'50vw'}">
       <Totalelectricity :Arr = "List.data"></Totalelectricity>
       <Totalepie></Totalepie>
       <TotaleWater :Woter = "List.Woter" ></TotaleWater>
     </el-tab-pane>
-    <el-tab-pane label="忠孝大楼" name="second">
+    <el-tab-pane label="忠孝大楼" name="second" class="flex justify-around items-center flex-wrap">
       <Totalelectricity  :Arr = "List.data1" ></Totalelectricity>
       <TotaleWater :Woter = "List.Woter1"></TotaleWater>
     </el-tab-pane>
-    <el-tab-pane  label="仁爱大楼" name="third">
-      <Totalelectricity  :Arr = "List.data2" ></Totalelectricity>
+    <el-tab-pane  label="仁爱大楼" name="third" class="flex justify-around items-center flex-wrap">
+      <Totalelectricity  :Arr = "List.data2" class="flex justify-around items-center flex-wrap"></Totalelectricity>
       <TotaleWater  :Woter = "List.Woter2"></TotaleWater>
     </el-tab-pane>
-    <el-tab-pane label="信义大楼" name="fourth">
+    <el-tab-pane label="信义大楼" name="fourth" class="flex justify-around items-center flex-wrap">
       <Totalelectricity  :Arr = "List.data3" ></Totalelectricity>
       <TotaleWater  :Woter = "List.Woter3"></TotaleWater>
     </el-tab-pane>

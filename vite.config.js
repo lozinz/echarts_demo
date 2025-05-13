@@ -8,4 +8,7 @@ export default defineConfig({
     vue(),
     tailwindcss()
   ],
+  server: {
+    base: "echarts_demo"
+  }
 })

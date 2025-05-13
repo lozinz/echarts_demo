@@ -90,4 +90,6 @@ const handleResize = () => {
     chartInstance.resize()
   }
 }
+
+
 </script>
